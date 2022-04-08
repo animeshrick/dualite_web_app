@@ -1,9 +1,9 @@
+import 'package:dualite_web_app/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 import 'about_ us_page.dart';
 import 'const.dart';
-import 'drawer.dart';
 import 'dualite_ambassdors/dualite_ambassdors.dart';
 import 'dualitr_competition.dart';
 import 'home_page.dart';
@@ -11,15 +11,14 @@ import 'interestive_video_player/video_player.dart';
 import 'responsive.dart';
 
 class Gallery extends StatelessWidget {
-  const Gallery({Key? key}) : super(key: key);
-
+  bool active = true;
   @override
   Widget build(BuildContext context) {
     return ResponsiveWidget.isSmallScreen(context)
         ? SafeArea(
             child: Scaffold(
               backgroundColor: primaryColor,
-              endDrawer: MyDrawer(),
+              endDrawer: NavDraw(),
               appBar: AppBar(
                 elevation: 0,
                 iconTheme: const IconThemeData(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../const.dart';
-import '../drawer.dart';
+import '../custom_drawer.dart';
 import '../dualite_ambassdors/textfield.dart';
 
 class DueliteAmbassadorWeb extends StatefulWidget {
@@ -12,6 +12,7 @@ class DueliteAmbassadorWeb extends StatefulWidget {
 }
 
 class _DueliteAmbassadorWebState extends State<DueliteAmbassadorWeb> {
+  bool active = true;
   String cat = 'CATEGORY (OPTIONAL)';
   TextEditingController name = TextEditingController();
   Color textColor = Colors.white;
@@ -21,7 +22,7 @@ class _DueliteAmbassadorWebState extends State<DueliteAmbassadorWeb> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Color(0xff101010),
-      endDrawer: const MyDrawer(),
+      endDrawer: NavDraw(),
       appBar: AppBar(
         elevation: 0,
         iconTheme: const IconThemeData(

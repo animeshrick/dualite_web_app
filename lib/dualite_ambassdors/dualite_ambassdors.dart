@@ -1,7 +1,7 @@
+import 'package:dualite_web_app/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 import '../const.dart';
-import '../drawer.dart';
 import '../responsive.dart';
 import '../web_view_pages/duelite_ambassador_web.dart';
 import 'textfield.dart';
@@ -17,7 +17,7 @@ class _DualiteAmbassdorsState extends State<DualiteAmbassdors> {
   String Cat = 'CATEGORY (OPTIONAL)';
   TextEditingController name = TextEditingController();
   Color? textColor = Colors.white;
-
+  bool active = true;
   @override
   void initState() {
     super.initState();
@@ -31,7 +31,7 @@ class _DualiteAmbassdorsState extends State<DualiteAmbassdors> {
     return ResponsiveWidget.isSmallScreen(context)
         ? Scaffold(
             backgroundColor: Colors.black.withOpacity(0.9),
-            endDrawer: MyDrawer(),
+            endDrawer: NavDraw(),
             appBar: AppBar(
               elevation: 0,
               iconTheme: const IconThemeData(

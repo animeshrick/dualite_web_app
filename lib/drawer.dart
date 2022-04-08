@@ -1,20 +1,45 @@
+import 'package:dualite_web_app/about_%20us_page.dart';
 import 'package:dualite_web_app/const.dart';
+import 'package:dualite_web_app/dualite_ambassdors/dualite_ambassdors.dart';
+import 'package:dualite_web_app/gallaery.dart';
+import 'package:dualite_web_app/home_page.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'dualitr_competition.dart';
 
 List<String> menu = ['Home', 'Discover', 'About', 'Competition', 'Ambassadors'];
 
 class MyDrawer extends StatefulWidget {
-  const MyDrawer({Key? key}) : super(key: key);
-
   @override
   State<MyDrawer> createState() => _MyDrawerState();
 }
 
 class _MyDrawerState extends State<MyDrawer> {
-  int _isSelect = 0;
+  // int _isSelect = 0;
   bool isHovering = false;
+  int selectedIndex = 0;
+
+  Widget _createDrawerItem(
+      {required String text,
+      required GestureTapCallback onTap,
+      required bool isSelected}) {
+    return Ink(
+      color: isSelected ? red : Colors.brown,
+      child: ListTile(
+        selected: true,
+        hoverColor: Colors.amber,
+        title: Center(
+            child: Text(
+          text,
+          style: TextStyle(
+            fontSize: 45,
+            color: isSelected ? red : Colors.black,
+          ),
+        )),
+        onTap: onTap,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -27,48 +52,142 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            InkWell(
-              onTap: () => null,
-              onHover: (hovering) {
-                setState(() => isHovering = hovering);
+            OnHover(builder: (isHovered) {
+              final color = isHovered ? red : Colors.black;
+              return IconButton(
+                  // hoverColor: red,
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.close,
+                    color: color,
+                    size: 25,
+                  ));
+            }),
+            _createDrawerItem(
+              text: 'Home',
+              isSelected: selectedIndex == 0,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 0;
+                });
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => HomePage()),
+                );
               },
-              child: xText(
-                'Hello, world',
-                style: TextStyle(
-                  fontSize: 90,
-                  color: isHovering ? Colors.indigoAccent : Colors.green,
-                ),
-              ),
+            ),
+            _createDrawerItem(
+              text: 'Discover',
+              isSelected: selectedIndex == 1,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 2;
+                });
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => Gallery()),
+                );
+              },
+            ),
+            _createDrawerItem(
+              text: 'About',
+              isSelected: selectedIndex == 3,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 3;
+                });
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => AboutUsPage()),
+                );
+              },
             ),
 
-            SizedBox(
-              height: screenSize.height * 0.6,
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: menu.length,
-                itemBuilder: (_, int index) {
-                  return ListTile(
-                    title: Text(menu[index]),
-                    selected: index == _isSelect,
-                    selectedColor: red,
-                    hoverColor: red,
-                    enabled: true,
-                    focusColor: red,
-                    onTap: () {
-                      setState(() {
-                        _isSelect = index;
-                      });
-                      if (index == 0) {
-                        Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(builder: (_) => const HomePage()),
-                        );
-                      }
-                    },
-                  );
-                },
-              ),
+            _createDrawerItem(
+              text: 'Competition',
+              isSelected: selectedIndex == 4,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 4;
+                });
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const DualiteCompetition()),
+                );
+              },
             ),
+            _createDrawerItem(
+              text: 'Ambassadors',
+              isSelected: selectedIndex == 3,
+              onTap: () {
+                setState(() {
+                  selectedIndex = 3;
+                });
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => const DualiteAmbassdors()),
+                );
+              },
+            ),
+
+            // Center(
+            //   child: SizedBox(
+            //     height: screenSize.height * 0.6,
+            //     child: ListView.builder(
+            //       shrinkWrap: true,
+            //       itemCount: menu.length,
+            //       itemBuilder: (_, int index) {
+            //         return ListTile(
+            //           title: Center(
+            //             child: Text(
+            //               menu[index],
+            //               style: TextStyle(fontSize: 45),
+            //             ),
+            //           ),
+            //           selected: index == _isSelect,
+            //           selectedColor: red,
+            //           onTap: () {
+            //             setState(() {
+            //               _isSelect = index;
+            //               print('}); $_isSelect');
+            //             });
+            //           },
+            //         );
+            //       },
+            //     ),
+            //   ),
+            // ),
+            /* if (index == 0) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => HomePage()),
+                            );
+                          } else if (index == 1) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => Gallery()),
+                            );
+                          } else if (index == 2) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(builder: (_) => AboutUsPage()),
+                            );
+                          } else if (index == 3) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const DualiteCompetition()),
+                            );
+                          } else if (index == 4) {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const DualiteAmbassdors()),
+                            );
+                          }*/
+
             // Padding(
             //   padding: const EdgeInsets.only(left: 15.0),
             //   child: Column(
@@ -282,31 +401,36 @@ class _MyDrawerState extends State<MyDrawer> {
             //       ]),
             // ),
             const SizedBox(height: 23.0),
-            Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        'assets/insta.png',
+                        width: 80,
+                      ),
+                      Image.asset(
+                        'assets/linkdin.png',
+                        width: 70,
+                      ),
+                      Image.asset(
+                        'assets/fb.png',
+                        width: 70,
+                      ),
+                      Image.asset(
+                        'assets/twitter.png',
+                        width: 70,
+                      ),
+                    ]),
+                const SizedBox(height: 160.0),
                 Image.asset(
-                  'assets/insta.png',
-                  width: 80,
+                  'assets/logo.png',
+                  width: screenSize.width * 0.2,
                 ),
-                Image.asset(
-                  'assets/linkdin.png',
-                  width: 70,
-                ),
-                Image.asset(
-                  'assets/fb.png',
-                  width: 70,
-                ),
-                Image.asset(
-                  'assets/twitter.png',
-                  width: 70,
-                ),
-              ]),
-              const SizedBox(height: 160.0),
-              Image.asset(
-                'assets/logo.png',
-                width: screenSize.width * 0.2,
-              ),
-            ]),
+              ],
+            ),
           ],
         ),
       ),
