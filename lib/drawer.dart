@@ -1,3 +1,4 @@
+import 'package:dualite_web_app/const.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -13,6 +14,8 @@ class MyDrawer extends StatefulWidget {
 
 class _MyDrawerState extends State<MyDrawer> {
   int _isSelect = 0;
+  bool isHovering = false;
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -24,8 +27,21 @@ class _MyDrawerState extends State<MyDrawer> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            InkWell(
+              onTap: () => null,
+              onHover: (hovering) {
+                setState(() => isHovering = hovering);
+              },
+              child: xText(
+                'Hello, world',
+                style: TextStyle(
+                  fontSize: 90,
+                  color: isHovering ? Colors.indigoAccent : Colors.green,
+                ),
+              ),
+            ),
+
             SizedBox(
-              width: screenSize.width,
               height: screenSize.height * 0.6,
               child: ListView.builder(
                 shrinkWrap: true,
@@ -34,6 +50,10 @@ class _MyDrawerState extends State<MyDrawer> {
                   return ListTile(
                     title: Text(menu[index]),
                     selected: index == _isSelect,
+                    selectedColor: red,
+                    hoverColor: red,
+                    enabled: true,
+                    focusColor: red,
                     onTap: () {
                       setState(() {
                         _isSelect = index;
