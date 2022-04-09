@@ -1,7 +1,7 @@
+import 'package:dualite_web_app/custom_drawer.dart';
 import 'package:flutter/material.dart';
 
 import 'const.dart';
-import 'drawer.dart';
 import 'dualite_ambassdors/dualite_ambassdors.dart';
 import 'dualitr_competition.dart';
 import 'gallaery.dart';
@@ -9,7 +9,7 @@ import 'home_page.dart';
 import 'responsive.dart';
 
 class AboutUsPage extends StatelessWidget {
-  const AboutUsPage({Key? key}) : super(key: key);
+  bool active = true;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class AboutUsPage extends StatelessWidget {
         ? SafeArea(
             child: Scaffold(
               backgroundColor: primaryColor,
-              endDrawer: MyDrawer(),
+              endDrawer: NavDraw(),
               appBar: AppBar(
                 elevation: 0,
                 iconTheme: const IconThemeData(

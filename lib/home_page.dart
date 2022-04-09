@@ -2,14 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'about_ us_page.dart';
 import 'const.dart';
-import 'drawer.dart';
+import 'custom_drawer.dart';
 import 'dualite_ambassdors/dualite_ambassdors.dart';
 import 'dualitr_competition.dart';
 import 'gallaery.dart';
 import 'responsive.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  bool active = true;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class HomePage extends StatelessWidget {
     return ResponsiveWidget.isSmallScreen(context)
         ? Scaffold(
             backgroundColor: primaryColor,
-            endDrawer: MyDrawer(),
+            endDrawer: NavDraw(),
             appBar: AppBar(
               elevation: 0,
               iconTheme: const IconThemeData(

@@ -8,7 +8,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:video_player/video_player.dart';
 
 import '../const.dart';
-import '../drawer.dart';
+import '../custom_drawer.dart';
 import '../responsive.dart';
 import '../web_view_pages/competition_page_web.dart';
 import 'model/dualite_competition_model.dart';
@@ -35,7 +35,7 @@ class _ContestPageState extends State<ContestPage> {
   bool isStatic = false;
   ContestModel? contest = ContestModel();
   late Future<ContestModel?> contest2;
-
+  bool active = true;
   Future<dynamic> uploadVideo(
       {required String name,
       required String videoTitle,
@@ -171,7 +171,7 @@ class _ContestPageState extends State<ContestPage> {
         ? SafeArea(
             child: Scaffold(
               backgroundColor: primaryColor,
-              endDrawer: MyDrawer(),
+              endDrawer: NavDraw(),
               appBar: AppBar(
                 elevation: 0,
                 iconTheme: const IconThemeData(
