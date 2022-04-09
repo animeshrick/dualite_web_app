@@ -32,7 +32,7 @@ class _MyDrawerState extends State<MyDrawer> {
               onHover: (hovering) {
                 setState(() => isHovering = hovering);
               },
-              child: xText(
+              child: Text(
                 'Hello, world',
                 style: TextStyle(
                   fontSize: 90,
