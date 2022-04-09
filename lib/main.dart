@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      // home: TestVideoPlayer(),
+      // home: UploadContestWeb(),
       // home: Upload(),
       // home: CompetitionPageWeb(),
       // home: DueliteAmbassadorWeb(),

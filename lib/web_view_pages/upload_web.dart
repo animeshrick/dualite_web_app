@@ -103,6 +103,10 @@ class _UploadContestWebState extends State<UploadContestWeb> {
     }
   }
 
+  bool showText = false;
+  String text =
+      "The Interactive content that you create consists of two videos running in the same duration that can be switched at an instant, therefore you need to make upload two videos of the same duration.";
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -175,7 +179,7 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                       children: [
                         field(
                           controller: name,
-                          hintText: 'YOUR NAME',
+                          hintText: 'NAME',
                           validator: (v) {},
                         ),
                         SizedBox(
@@ -183,7 +187,7 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                         ),
                         field(
                           controller: email,
-                          hintText: 'YOUR E-MAIL',
+                          hintText: 'E-MAIL',
                           validator: (v) {},
                         ),
                         SizedBox(
@@ -191,7 +195,7 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                         ),
                         field(
                           controller: videoTitle,
-                          hintText: 'Video Title',
+                          hintText: 'Content Title',
                           validator: (v) {},
                         ),
                         SizedBox(
@@ -285,8 +289,7 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                             : Column(
                                 children: [
                                   Padding(
-                                    padding: const EdgeInsets.only(
-                                        left: 60, right: 35, top: 15),
+                                    padding: const EdgeInsets.only(top: 20),
                                     child: InkWell(
                                       onTap: () {
                                         staticVideo();
@@ -334,17 +337,18 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                                       height: 50,
                                       width: MediaQuery.of(context).size.width *
                                           0.3,
-                                      padding: const EdgeInsets.only(left: 30),
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topRight,
-                                          end: Alignment.bottomLeft,
-                                          colors: [
-                                            red,
-                                            redColor.withOpacity(0.2)
-                                          ],
-                                        ),
-                                      ),
+                                      // padding: const EdgeInsets.only(left: 30),
+                                      color: red,
+                                      // decoration: BoxDecoration(
+                                      //   gradient: LinearGradient(
+                                      //     begin: Alignment.topRight,
+                                      //     end: Alignment.bottomLeft,
+                                      //     colors: [
+                                      //       red,
+                                      //       redColor.withOpacity(0.2)
+                                      //     ],
+                                      //   ),
+                                      // ),
                                       child: const Center(
                                           child: Text(
                                         'PREVIEW',
@@ -358,8 +362,7 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                         isStatic
                             ? SizedBox()
                             : Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 60, right: 35, top: 15),
+                                padding: const EdgeInsets.only(top: 20),
                                 child: InkWell(
                                   onTap: () {
                                     pickVideo1();
@@ -390,8 +393,7 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                         isStatic
                             ? SizedBox()
                             : Padding(
-                                padding: const EdgeInsets.only(
-                                    left: 60, right: 35, top: 15),
+                                padding: const EdgeInsets.only(top: 20.0),
                                 child: InkWell(
                                   onTap: () {
                                     pickVideo2();
@@ -421,46 +423,76 @@ class _UploadContestWebState extends State<UploadContestWeb> {
                         const SizedBox(height: 30),
                         isStatic
                             ? SizedBox()
-                            : const Text(
-                                'Why Upload two videos?',
-                                style: TextStyle(color: red),
-                              ),
-                        const SizedBox(height: 10),
-                        isStatic
-                            ? SizedBox()
-                            : InkWell(
-                                onTap: () async {
-                                  var x = await uploadVideo(
-                                    cat: videoCat,
-                                    email: email.text,
-                                    name: name.text,
-                                    videoTitle: videoTitle.text,
-                                  );
-
-                                  v1put1(video1: file1Name);
-                                  v2put2(video2: file2Name);
-                                  // Future.delayed(
-                                  //   const Duration(
-                                  //     seconds: 3,
-                                  //   ),
-                                  //   () => Navigator.pop(context),
-                                  // );
+                            : TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    showText = !showText;
+                                  });
                                 },
-                                child: Container(
-                                  color: red,
-                                  height: 50,
-                                  width: screenSize.width * 0.14,
-                                  child: const Center(
-                                      child: Text(
-                                    'UPLOAD',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 24,
-                                    ),
-                                  )),
+                                child: const Text(
+                                  'Why Upload two videos?',
+                                  style: TextStyle(color: red),
                                 ),
                               ),
+                        Visibility(
+                          visible: showText,
+                          child: Container(
+                            height: 100,
+                            padding: EdgeInsets.all(10),
+                            width: MediaQuery.of(context).size.width * 0.3,
+                            decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.only(
+                                topRight: Radius.circular(10.0),
+                                bottomRight: Radius.circular(10.0),
+                                topLeft: Radius.circular(10.0),
+                                bottomLeft: Radius.circular(10.0),
+                              ),
+                              border: Border.all(
+                                color: red,
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                text,
+                                style: TextStyle(color: red),
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        InkWell(
+                          onTap: () async {
+                            var x = await uploadVideo(
+                              cat: videoCat,
+                              email: email.text,
+                              name: name.text,
+                              videoTitle: videoTitle.text,
+                            );
+
+                            v1put1(video1: file1Name);
+                            v2put2(video2: file2Name);
+                            // Future.delayed(
+                            //   const Duration(
+                            //     seconds: 3,
+                            //   ),
+                            //   () => Navigator.pop(context),
+                            // );
+                          },
+                          child: Container(
+                            color: red,
+                            height: 50,
+                            width: screenSize.width * 0.3,
+                            child: const Center(
+                                child: Text(
+                              'UPLOAD',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                            )),
+                          ),
+                        ),
                         const SizedBox(height: 30),
                         SizedBox(
                           width: 400,

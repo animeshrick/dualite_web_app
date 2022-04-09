@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontFamily: "bridge-text-medium",
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 24,
                             color: Colors.white,
                           ),
                         ),
@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
                           style: TextStyle(
                             fontFamily: "bridge-text-medium",
                             fontWeight: FontWeight.bold,
-                            fontSize: 30,
+                            fontSize: 24,
                             color: Colors.black,
                           ),
                         ),

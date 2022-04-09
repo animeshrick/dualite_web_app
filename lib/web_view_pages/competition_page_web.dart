@@ -29,6 +29,9 @@ class CompetitionPageWeb extends StatelessWidget {
     "assets/web_competition/21.png",
     "assets/web_competition/22.png",
     "assets/web_competition/23.png",
+    "assets/web_competition/circle_ronaldo.png",
+    "assets/web_competition/circle_tamasha.png",
+    "assets/web_competition/circle_vd.png",
   ];
 
   List bg = [
@@ -209,15 +212,16 @@ class CompetitionPageWeb extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
                           Image.asset(
-                            img[15],
+                            img[24],
                             width: screenSize.width * 0.3,
                           ),
                           Image.asset(
-                            "assets/DualiteCompetition/x.png",
+                            img[25],
                             width: screenSize.width * 0.3,
                           ),
                           Image.asset(
-                            "assets/DualiteCompetition/y.png",
+                            img[26],
+                            width: screenSize.width * 0.3,
                           ),
                         ],
                       ),

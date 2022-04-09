@@ -110,7 +110,7 @@ class _DualiteAmbassdorsState extends State<DualiteAmbassdors> {
                               children: const [
                                 Positioned(
                                   top: 10,
-                                  left: 65,
+                                  left: 20,
                                   child: Icon(
                                     Icons.north_east,
                                     size: 20,
@@ -118,7 +118,7 @@ class _DualiteAmbassdorsState extends State<DualiteAmbassdors> {
                                   ),
                                 ),
                                 Positioned(
-                                  left: 100,
+                                  left: 50,
                                   child: SizedBox(
                                     width: 220,
                                     child: Text(
@@ -212,6 +212,44 @@ class _DualiteAmbassdorsState extends State<DualiteAmbassdors> {
                           ),
                         ),
                         const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'CHOOSE FILE ONE',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "SpaceMono-Regular",
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        Container(
+                          height: 50,
+                          width: 300,
+                          decoration: BoxDecoration(
+                            border: Border.all(color: Colors.white),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              'CHOOSE FILE ONE',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: "SpaceMono-Regular",
+                              ),
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
                           height: 30,
                         ),
                         TextButton(
@@ -227,99 +265,12 @@ class _DualiteAmbassdorsState extends State<DualiteAmbassdors> {
                               ),
                             )),
                         const SizedBox(
-                          height: 30,
-                        ),
-                        Container(
-                          height: 50,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'CHOOSE FILE ONE',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "SpaceMono-Regular",
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 50,
-                          width: 300,
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.white),
-                          ),
-                          child: const Center(
-                            child: Text(
-                              'CHOOSE FILE ONE',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: "SpaceMono-Regular",
-                              ),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
                           height: 20,
                         ),
                         Container(
                           color: Colors.black,
                           width: size.width,
                           height: 50,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(left: 8.0),
-                                child: InkWell(
-                                  onTap: () {},
-                                  child: const Text(
-                                    'Terms and Support',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 15,
-                                      fontFamily: "SpaceMono-Regular",
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              ElevatedButton(
-                                child: const Text(
-                                  "Designed by Canva",
-                                  style: TextStyle(
-                                    fontFamily: "SpaceMono-Regular",
-                                  ),
-                                ),
-                                style: ButtonStyle(
-                                  overlayColor: MaterialStateProperty.all<
-                                          Color>(
-                                      Colors.lightBlueAccent.withOpacity(0.7)),
-                                  foregroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.white),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.transparent),
-                                  shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15),
-                                      side: const BorderSide(
-                                          color: Colors.transparent),
-                                    ),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  debugPrint("x");
-                                },
-                              ),
-                            ],
-                          ),
                         ),
                       ],
                     ),
