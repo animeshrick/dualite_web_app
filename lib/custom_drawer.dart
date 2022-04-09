@@ -20,7 +20,7 @@ class _NavDrawState extends State<NavDraw> {
 
     return Drawer(
       child: Container(
-        width: double.infinity,
+        width: screenSize.width,
         child: ListView(
           children: <Widget>[
             _createDrawerItem(
@@ -74,7 +74,7 @@ class _NavDrawState extends State<NavDraw> {
                     selectedIndex = 3;
                   });
 
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                         builder: (_) => const DualiteCompetition()),
