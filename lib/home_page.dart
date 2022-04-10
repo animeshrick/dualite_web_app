@@ -1,3 +1,4 @@
+import 'package:dualite_web_app/web_view_pages/home_page_web.dart';
 import 'package:flutter/material.dart';
 
 import 'about_ us_page.dart';
@@ -312,6 +313,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           )
-        : Text("COMMING SOON");
+        : HomePageWeb();
   }
 }

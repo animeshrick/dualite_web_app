@@ -1,4 +1,5 @@
 import 'package:dualite_web_app/custom_drawer.dart';
+import 'package:dualite_web_app/web_view_pages/gallery_web.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
@@ -259,9 +260,6 @@ class Gallery extends StatelessWidget {
               ),
             ),
           )
-        : const SizedBox(
-            height: 0,
-            child: Text("COMMING SOON"),
-          );
+        : GalleryWeb();
   }
 }

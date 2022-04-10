@@ -1,3 +1,4 @@
+import 'package:dualite_web_app/web_view_pages/gallery_web.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -19,11 +20,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      // home: UploadContestWeb(),
-      // home: Upload(),
-      // home: CompetitionPageWeb(),
-      // home: DueliteAmbassadorWeb(),
+      // home: SplashScreen(),
+      home: GalleryWeb(),
     );
   }
 }

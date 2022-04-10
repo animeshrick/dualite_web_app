@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 const Color primaryColor = Color(0xffe5e4e1);
 const Color red = Color(0xfffc3959);
 const Color foolterColor = Color(0xff222831);
+const Color appBlack = Color(0xff231f20);
 
 const String logo = "assets/logo.png";
 const String videoImg = "assets/pic1.jpg";

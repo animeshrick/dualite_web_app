@@ -87,6 +87,8 @@ flutter:
     - assets/home/
     - assets/web_competition/
     - assets/web_competition/bg/
+    - assets/web_home/
+    - assets/web_gallery/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -147,5 +149,9 @@ flutter:
     - family: Swiss 721 Black BT
       fonts:
         - asset: assets/font/Swiss 721 Black BT.ttf
+
+    - family: VisiaPro-Regular
+      fonts:
+        - asset: assets/font/VisiaPro-Regular.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
