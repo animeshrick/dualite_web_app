@@ -1,4 +1,4 @@
-import 'package:dualite_web_app/web_view_pages/gallery_web.dart';
+import 'package:dualite_web_app/web_view_pages/about_us_web.dart';
 import 'package:flutter/material.dart';
 
 import 'home_page.dart';
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       // home: SplashScreen(),
-      home: GalleryWeb(),
+      home: AboutUsWeb(),
     );
   }
 }

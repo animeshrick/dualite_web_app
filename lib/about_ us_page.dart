@@ -1,4 +1,5 @@
 import 'package:dualite_web_app/custom_drawer.dart';
+import 'package:dualite_web_app/web_view_pages/about_us_web.dart';
 import 'package:flutter/material.dart';
 
 import 'const.dart';
@@ -276,9 +277,6 @@ class AboutUsPage extends StatelessWidget {
               ),
             ),
           )
-        : const SizedBox(
-            height: 0,
-            child: Text("COMMING SOON"),
-          );
+        : AboutUsWeb();
   }
 }

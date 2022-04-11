@@ -4,30 +4,20 @@ import 'package:flutter/material.dart';
 import '../const.dart';
 import '../custom_drawer.dart';
 
-class GalleryWeb extends StatefulWidget {
+class AboutUsWeb extends StatefulWidget {
+  const AboutUsWeb({Key? key}) : super(key: key);
+
   @override
-  _GalleryWebState createState() => _GalleryWebState();
+  State<AboutUsWeb> createState() => _AboutUsWebState();
 }
 
-class _GalleryWebState extends State<GalleryWeb> {
-  List<String> canvasTitle = [
-    'Moonshot',
-    'Valentine',
-  ];
-  List<String> canvasText = [
-    "A selection of the finest edits, amplified with the interactive ‘tap’ element ",
-  ];
-  List<String> canvasImg = [
-    'assets/web_gallery/gal_1.png',
-    'assets/web_gallery/gal_2.png',
-  ];
-
+class _AboutUsWebState extends State<AboutUsWeb> {
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: primaryColor,
+      // backgroundColor: primaryColor,
       endDrawer: NavDraw(),
       appBar: AppBar(
         elevation: 0,
@@ -40,251 +30,170 @@ class _GalleryWebState extends State<GalleryWeb> {
         backgroundColor: appBlack,
       ),
       body: SingleChildScrollView(
-        physics: const BouncingScrollPhysics(),
+        physics: BouncingScrollPhysics(),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
               width: w,
-              height: 600,
               color: appBlack,
-              padding: const EdgeInsets.only(
-                  top: 200, left: 54, right: 54, bottom: 200),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: const [
                   Text(
-                    'Our Canvas',
+                    'To all the \ncreators,',
                     style: TextStyle(
+                      fontFamily: 'VisiaPro-Regular',
+                      fontWeight: FontWeight.w400,
                       color: Colors.white,
                       fontSize: 128,
-                      fontFamily: "Swiss 721 Black BT",
                     ),
                   ),
                   FittedBox(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: 170.0,
+                        right: 118,
+                        top: 50,
+                        bottom: 150,
+                      ),
+                      child: Text(
+                        'We’re absolute admirers of you. The \nsheer brilliance through which you create \nand build beautiful things and moments \nof magic, we’re in awe. \n  And through our interactive tools and a \nplace where you can build great beautiful \nthings. It’s our token of gratitude to you.  \n  The greatest gift that you can give us is \nto push our tools beyond their limits and \npaint till the sky mirrors your colors.',
+                        style: TextStyle(
+                          fontFamily: 'VisiaPro-Regular',
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white,
+                          fontSize: 64,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      left: 81.0,
+                      right: 449,
+                      bottom: 156,
+                    ),
                     child: Text(
-                      'A selection of the finest edits, amplified with the interactive ‘tap’ element ',
+                      "- Dualite Team",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
                         fontFamily: 'VisiaPro-Regular',
+                        fontWeight: FontWeight.w400,
+                        color: Colors.white,
+                        fontSize: 96,
                       ),
                     ),
                   ),
                 ],
               ),
             ),
-            const SizedBox(
-              height: 116,
+            const Padding(
+              padding: EdgeInsets.only(
+                left: 188.0,
+                right: 188,
+                top: 45,
+                bottom: 31,
+              ),
+              child: Text(
+                'Meet our team',
+                style: TextStyle(
+                  fontFamily: 'Swiss 721 Black BT',
+                  fontWeight: FontWeight.w400,
+                  fontSize: 96,
+                ),
+              ),
             ),
-            FittedBox(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 34.0),
-                    child: Image.asset(
-                      canvasImg[0],
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 109),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: appBlack),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(15),
                     ),
                   ),
-                  const SizedBox(
-                    width: 200,
-                  ),
-                  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        canvasTitle[0],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 72,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Swiss 721 Black BT',
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Image.asset(
+                          'assets/web_about_us/HOME PAGE-DesktopVersion 7.png',
                         ),
                       ),
-                      SizedBox(
-                        width: 600,
-                        height: 150,
-                        child: Text(
-                          canvasText[0],
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
+                      const Text(
+                        'Founder',
+                        style: TextStyle(
+                            fontFamily: 'Swiss 721 Black BT',
                             fontSize: 32,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'VisiaPro-Regular',
-                          ),
-                        ),
+                            fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 116,
-            ),
-            FittedBox(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 34.0),
-                    child: Image.asset(
-                      canvasImg[1],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 15.0),
+                  child: FittedBox(
+                    child: Text(
+                      'bvbsv sbvvihsbv sbhvsvhbs',
+                      style: TextStyle(
+                          fontFamily: 'VisiaPro-Regular',
+                          fontSize: 96,
+                          fontWeight: FontWeight.w400),
                     ),
                   ),
-                  const SizedBox(
-                    width: 200,
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  margin: const EdgeInsets.only(left: 109),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: appBlack),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(15),
+                    ),
                   ),
-                  Column(
+                  child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
-                        canvasTitle[1],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 72,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Swiss 721 Black BT',
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Image.asset(
+                          'assets/web_about_us/HOME PAGE-DesktopVersion 8.png',
                         ),
                       ),
-                      SizedBox(
-                        width: 600,
-                        height: 150,
-                        child: Text(
-                          canvasText[0],
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
+                      const Text(
+                        'Founder',
+                        style: TextStyle(
+                            fontFamily: 'Swiss 721 Black BT',
                             fontSize: 32,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'VisiaPro-Regular',
-                          ),
-                        ),
+                            fontWeight: FontWeight.w400),
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 116,
-            ),
-            FittedBox(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 34.0),
-                    child: Image.asset(
-                      canvasImg[0],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(right: 15.0),
+                  child: FittedBox(
+                    child: Text(
+                      'bvbsv sbvvihsbv sbhvsvhbs',
+                      style: TextStyle(
+                          fontFamily: 'VisiaPro-Regular',
+                          fontSize: 96,
+                          fontWeight: FontWeight.w400),
                     ),
                   ),
-                  const SizedBox(
-                    width: 200,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        canvasTitle[0],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 72,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Swiss 721 Black BT',
-                        ),
-                      ),
-                      SizedBox(
-                        width: 600,
-                        height: 150,
-                        child: Text(
-                          canvasText[0],
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'VisiaPro-Regular',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 116,
-            ),
-            FittedBox(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 34.0),
-                    child: Image.asset(
-                      canvasImg[1],
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 200,
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Text(
-                        canvasTitle[1],
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 72,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: 'Swiss 721 Black BT',
-                        ),
-                      ),
-                      SizedBox(
-                        width: 600,
-                        height: 150,
-                        child: Text(
-                          canvasText[0],
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: 'VisiaPro-Regular',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 116,
-            ),
-            Container(
-              height: 350,
-              width: w,
-              color: red,
-              padding: const EdgeInsets.all(30),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    "WE'RE CREATORS TOO",
-                    style: TextStyle(
-                      fontFamily: "Swiss 721 Black BT",
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
-                      fontSize: 52,
-                    ),
-                  ),
-                  Text(
-                    "We're a bunch of creative people who believe \nin moonshot thinking and our mission is to give \nthe crazy ones a stage to show their creativity.",
-                    style: TextStyle(
-                      fontFamily: "blauth-regular",
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            // bottom section
             Container(
               height: 300,
               width: w,
