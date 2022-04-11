@@ -375,15 +375,16 @@ class _GalleryWebState extends State<GalleryWeb> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Row(
-                        children: const [
-                          Icon(
-                            Icons.star,
-                            color: Colors.white,
+                        children: [
+                          Image.asset(
+                            'assets/insta.png',
+                            height: 50,
+                            width: 50,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             'Instagram',
                             style: TextStyle(
                               fontFamily: "blauth-regular",
@@ -397,15 +398,16 @@ class _GalleryWebState extends State<GalleryWeb> {
                         width: 35,
                       ),
                       Row(
-                        children: const [
-                          Icon(
-                            Icons.person_outline,
-                            color: Colors.white,
+                        children: [
+                          Image.asset(
+                            'assets/twitter.png',
+                            height: 50,
+                            width: 50,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text(
+                          const Text(
                             'Twitter',
                             style: TextStyle(
                               fontFamily: "blauth-regular",
