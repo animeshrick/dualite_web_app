@@ -6,6 +6,10 @@ const Color red = Color(0xfffc3959);
 const Color foolterColor = Color(0xff222831);
 const Color appBlack = Color(0xff231f20);
 
+const String instagramLink = "https://www.instagram.com/dualiteindia/";
+const String twitterLink = "https://twitter.com/Dualiteindia";
+const String linkedinLink = "https://linkedin.com/company/perspective101";
+
 const String logo = "assets/logo.png";
 const String videoImg = "assets/pic1.jpg";
 

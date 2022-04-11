@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (_) => AboutUsPage()),
+                        MaterialPageRoute(builder: (_) => AboutUsMobile()),
                       );
                     },
                     child: Image.asset(
@@ -225,7 +225,7 @@ class _HomePageState extends State<HomePage> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => AboutUsPage()),
+                                    builder: (_) => AboutUsMobile()),
                               );
                             },
                             child: const Text(

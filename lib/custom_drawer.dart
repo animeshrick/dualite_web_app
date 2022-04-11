@@ -63,7 +63,7 @@ class _NavDrawState extends State<NavDraw> {
 
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (_) => AboutUsPage()),
+                    MaterialPageRoute(builder: (_) => AboutUsMobile()),
                   );
                 }),
             _createDrawerItem(
