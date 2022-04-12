@@ -255,6 +255,9 @@ class _GalleryWebState extends State<GalleryWeb> {
             const SizedBox(
               height: 116,
             ),
+
+            /// bottom section
+            /// 1st red, 2nd & 3rd Black
             Container(
               height: 350,
               width: w,
@@ -284,7 +287,6 @@ class _GalleryWebState extends State<GalleryWeb> {
                 ],
               ),
             ),
-            // bottom section
             Container(
               height: 300,
               width: w,

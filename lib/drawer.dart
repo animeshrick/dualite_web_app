@@ -61,7 +61,7 @@ class _MyDrawerState extends State<MyDrawer> {
                       if (index == 0) {
                         Navigator.pushReplacement(
                           context,
-                          MaterialPageRoute(builder: (_) => HomePage()),
+                          MaterialPageRoute(builder: (_) => HomePage2()),
                         );
                       }
                     },

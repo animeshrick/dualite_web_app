@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 import '../const.dart';
 import '../custom_drawer.dart';
@@ -35,7 +36,7 @@ class _HomePageWebState extends State<HomePageWeb> {
             Image.asset(
               home_1,
               width: w,
-              height: 600,
+              height: 800,
               fit: BoxFit.fill,
             ),
             const FittedBox(
@@ -52,8 +53,134 @@ class _HomePageWebState extends State<HomePageWeb> {
                 ),
               ),
             ),
+            Container(
+              height: 634,
+              width: w,
+              color: appBlack,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Stack(
+                    children: [
+                      Image.asset(logo),
+                      Positioned(
+                        left: 150,
+                        top: 50,
+                        child: Image.asset(
+                          'assets/web_home/home_2.png',
+                        ),
+                      ),
+                    ],
+                  ),
+                  FittedBox(
+                    child: Column(
+                      children: const [
+                        Text(
+                          'Introducing Dualite',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 60,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Swiss 721 Bold BT',
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 50.0),
+                          child: SizedBox(
+                            width: 1000,
+                            child: Text(
+                              "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, ",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'VisiaPro-Regular',
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            const Text(
+              'Our Canvas',
+              style: TextStyle(
+                color: appBlack,
+                fontSize: 72,
+                fontWeight: FontWeight.bold,
+                fontFamily: 'Swiss 721 Bold BT',
+              ),
+            ),
+            const SizedBox(
+              height: 70,
+            ),
+            ImageSlideshow(
+              width: w,
+              height: 537,
+              initialPage: 0,
+              indicatorColor: Colors.blue,
+              indicatorBackgroundColor: Colors.grey,
+              children: [
+                Image.asset(
+                  'assets/web_home/home_3.png',
+                  fit: BoxFit.contain,
+                ),
+                Image.asset(
+                  'assets/web_home/home_3.png',
+                  fit: BoxFit.contain,
+                ),
+                Image.asset(
+                  'assets/web_home/home_3.png',
+                  fit: BoxFit.contain,
+                ),
+              ],
+              onPageChanged: (value) {
+                print('Page changed: $value');
+              },
+              autoPlayInterval: 3000,
+              isLoop: true,
+            ),
+            const SizedBox(
+              height: 70,
+            ),
 
             ///bottom part
+            Container(
+              height: 350,
+              width: w,
+              color: red,
+              padding: const EdgeInsets.only(
+                  top: 80, left: 30, right: 30, bottom: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    "WE'RE CREATORS TOO",
+                    style: TextStyle(
+                      fontFamily: "Swiss 721 Black BT",
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                      fontSize: 52,
+                    ),
+                  ),
+                  Text(
+                    "We're a bunch of creative people who believe \nin moonshot thinking and our mission is to give \nthe crazy ones a stage to show their creativity.",
+                    style: TextStyle(
+                      fontFamily: "blauth-regular",
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Container(
               height: 300,
               width: w,

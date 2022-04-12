@@ -175,7 +175,8 @@ class Gallery extends StatelessWidget {
                               onTap: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (_) => HomePage()),
+                                  MaterialPageRoute(
+                                      builder: (_) => HomePage2()),
                                 );
                               },
                               child: const Text(
