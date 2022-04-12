@@ -19,3 +19,4 @@ samples, guidance on mobile development, and a full API reference.
 https://www.figma.com/file/TU2NjscnPJ6IKnz2LXoE5W/Discover-webpage?node-id=0%3A1 --- home, gallery desktop view
 https://www.figma.com/file/bRLAnAx4DUf3VfrhCAPjHE/About-Us-Desktop?node-id=0%3A1 --- about us desktop view
 
+https://www.figma.com/file/MZE2QQX6eZk2SNXGNwVnsG/home-webdesign?node-id=0%3A1
