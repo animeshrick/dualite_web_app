@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'about_ us_page.dart';
@@ -434,32 +433,32 @@ class _HomePage2State extends State<HomePage2> {
             const SizedBox(
               height: 30,
             ),
-            ImageSlideshow(
-              width: w,
-              height: 150,
-              initialPage: 0,
-              indicatorColor: Colors.blue,
-              indicatorBackgroundColor: Colors.grey,
-              children: [
-                Image.asset(
-                  'assets/web_home/home_3.png',
-                  fit: BoxFit.contain,
-                ),
-                Image.asset(
-                  'assets/web_home/home_3.png',
-                  fit: BoxFit.contain,
-                ),
-                Image.asset(
-                  'assets/web_home/home_3.png',
-                  fit: BoxFit.contain,
-                ),
-              ],
-              onPageChanged: (value) {
-                print('Page changed: $value');
-              },
-              autoPlayInterval: 3000,
-              isLoop: true,
-            ),
+            // ImageSlideshow(
+            //   width: w,
+            //   height: 150,
+            //   initialPage: 0,
+            //   indicatorColor: Colors.blue,
+            //   indicatorBackgroundColor: Colors.grey,
+            //   children: [
+            //     Image.asset(
+            //       'assets/web_home/home_3.png',
+            //       fit: BoxFit.contain,
+            //     ),
+            //     Image.asset(
+            //       'assets/web_home/home_3.png',
+            //       fit: BoxFit.contain,
+            //     ),
+            //     Image.asset(
+            //       'assets/web_home/home_3.png',
+            //       fit: BoxFit.contain,
+            //     ),
+            //   ],
+            //   onPageChanged: (value) {
+            //     print('Page changed: $value');
+            //   },
+            //   autoPlayInterval: 3000,
+            //   isLoop: true,
+            // ),
             const SizedBox(
               height: 30,
             ),

@@ -1,8 +1,14 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 import '../const.dart';
 import '../custom_drawer.dart';
+
+List<String> imgList = [
+  'assets/web_home/home_3.png',
+  'assets/web_home/home_2.png',
+  'assets/web_home/HOME PAGE-DesktopVersion 7.png',
+];
 
 class HomePageWeb extends StatefulWidget {
   @override
@@ -10,6 +16,48 @@ class HomePageWeb extends StatefulWidget {
 }
 
 class _HomePageWebState extends State<HomePageWeb> {
+  final List<Widget> imageSliders = imgList
+      .map((item) => Container(
+            child: Container(
+              margin: EdgeInsets.all(5.0),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                  child: Stack(
+                    children: <Widget>[
+                      Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                      Positioned(
+                        bottom: 0.0,
+                        left: 0.0,
+                        right: 0.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [
+                                Color.fromARGB(200, 0, 0, 0),
+                                Color.fromARGB(0, 0, 0, 0)
+                              ],
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.topCenter,
+                            ),
+                          ),
+                          padding: EdgeInsets.symmetric(
+                              vertical: 10.0, horizontal: 20.0),
+                          child: Text(
+                            'No. ${imgList.indexOf(item)} image',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
+            ),
+          ))
+      .toList();
+
   String home_1 = 'assets/web_home/home_1.png';
 
   @override
@@ -120,32 +168,45 @@ class _HomePageWebState extends State<HomePageWeb> {
             const SizedBox(
               height: 70,
             ),
-            ImageSlideshow(
-              width: w,
+            // ImageSlideshow(
+            //   width: w,
+            //   height: 537,
+            //   initialPage: 0,
+            //   indicatorColor: Colors.blue,
+            //   indicatorBackgroundColor: Colors.grey,
+            //   children: [
+            //     Image.asset(
+            //       'assets/web_home/home_3.png',
+            //       fit: BoxFit.contain,
+            //     ),
+            //     Image.asset(
+            //       'assets/web_home/home_3.png',
+            //       fit: BoxFit.contain,
+            //     ),
+            //     Image.asset(
+            //       'assets/web_home/home_3.png',
+            //       fit: BoxFit.contain,
+            //     ),
+            //   ],
+            //   onPageChanged: (value) {
+            //     print('Page changed: $value');
+            //   },
+            //   autoPlayInterval: 3000,
+            //   isLoop: true,
+            // ),
+            Container(
               height: 537,
-              initialPage: 0,
-              indicatorColor: Colors.blue,
-              indicatorBackgroundColor: Colors.grey,
-              children: [
-                Image.asset(
-                  'assets/web_home/home_3.png',
-                  fit: BoxFit.contain,
+              width: w * 0.7,
+              child: CarouselSlider(
+                options: CarouselOptions(
+                  autoPlay: true,
+                  aspectRatio: 0.5,
+                  // enlargeCenterPage: true,
                 ),
-                Image.asset(
-                  'assets/web_home/home_3.png',
-                  fit: BoxFit.contain,
-                ),
-                Image.asset(
-                  'assets/web_home/home_3.png',
-                  fit: BoxFit.contain,
-                ),
-              ],
-              onPageChanged: (value) {
-                print('Page changed: $value');
-              },
-              autoPlayInterval: 3000,
-              isLoop: true,
+                items: imageSliders,
+              ),
             ),
+
             const SizedBox(
               height: 70,
             ),
