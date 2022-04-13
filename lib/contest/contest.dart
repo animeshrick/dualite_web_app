@@ -64,7 +64,19 @@ class _ContestPageState extends State<ContestPage> {
     debugPrint('resp $body');
     try {
       if (response.statusCode == 201) {
-        showToast('Video uploaded !!!', Colors.green);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Colors.white,
+            content: Text(
+              'Video Uploaded !',
+              style: TextStyle(
+                color: appBlack,
+                fontFamily: 'Barlow-Black',
+              ),
+            ),
+            duration: Duration(seconds: 5),
+          ),
+        );
         return resp;
       } else {
         throw response.body;
@@ -144,7 +156,19 @@ class _ContestPageState extends State<ContestPage> {
     request.headers.addAll(headers);
     http.StreamedResponse response = await request.send();
     if (response.statusCode == 200) {
-      showToast('Video 1 Uploaded', Colors.green);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.white,
+          content: Text(
+            'Video 1 uploading ... ',
+            style: TextStyle(
+              color: appBlack,
+              fontFamily: 'Barlow-Black',
+            ),
+          ),
+          duration: Duration(seconds: 5),
+        ),
+      );
     } else {
       showToast('Video 1 Upload failed', Colors.red);
     }
@@ -158,7 +182,19 @@ class _ContestPageState extends State<ContestPage> {
     request.headers.addAll(headers);
     http.StreamedResponse response = await request.send();
     if (response.statusCode == 200) {
-      showToast('Video 2 Uploaded', Colors.green);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.white,
+          content: Text(
+            'Video 2 uploading ... ',
+            style: TextStyle(
+              color: appBlack,
+              fontFamily: 'Barlow-Black',
+            ),
+          ),
+          duration: Duration(seconds: 5),
+        ),
+      );
     } else {
       showToast('Video 2 Upload failed', Colors.red);
     }

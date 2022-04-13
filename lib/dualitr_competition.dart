@@ -1,6 +1,8 @@
+import 'package:dualite_web_app/custom_drawer.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'const.dart';
 import 'contest/upload_contest_mobile.dart';
 import 'responsive.dart';
 import 'web_view_pages/competition_page_web.dart';
@@ -49,6 +51,7 @@ class _DualiteCompetitionState extends State<DualiteCompetition> {
     "assets/web_competition/bg/bg5.png",
   ];
   Color redColor = Color(0xffec1c26);
+
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
@@ -56,6 +59,17 @@ class _DualiteCompetitionState extends State<DualiteCompetition> {
       return CompetitionPageWeb();
     } else {
       return Scaffold(
+        endDrawer: NavDraw(),
+        appBar: AppBar(
+          elevation: 0,
+          iconTheme: const IconThemeData(
+            color: red,
+          ), // color will chnage
+          leading: Image.asset(
+            logo,
+          ), //icon will change
+          backgroundColor: Colors.grey[800],
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../const.dart';
+import '../custom_drawer.dart';
 import 'upload_web.dart';
 
 class CompetitionPageWeb extends StatelessWidget {
@@ -46,6 +48,18 @@ class CompetitionPageWeb extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.white,
+      endDrawer: NavDraw(),
+      appBar: AppBar(
+        elevation: 0,
+        iconTheme: const IconThemeData(
+          color: red,
+        ), // color will chnage
+        leading: Image.asset(
+          logo,
+        ), //icon will change
+        backgroundColor: appBlack,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

@@ -105,19 +105,19 @@ class _NavDrawState extends State<NavDraw> {
                     children: [
                       Image.asset(
                         'assets/insta.png',
-                        width: 60,
+                        width: 50,
                       ),
                       Image.asset(
                         'assets/linkdin.png',
-                        width: 60,
+                        width: 45,
                       ),
                       Image.asset(
                         'assets/fb.png',
-                        width: 60,
+                        width: 45,
                       ),
                       Image.asset(
                         'assets/twitter.png',
-                        width: 60,
+                        width: 45,
                       ),
                     ]),
                 const SizedBox(height: 50.0),
