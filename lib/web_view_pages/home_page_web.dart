@@ -6,8 +6,19 @@ import '../custom_drawer.dart';
 
 List<String> imgList = [
   'assets/web_home/home_3.png',
-  'assets/web_home/home_2.png',
-  'assets/web_home/HOME PAGE-DesktopVersion 7.png',
+  'assets/web_home/home_3.png',
+  'assets/web_home/home_3.png',
+];
+
+List<String> imgHeader = [
+  'VALENTINE',
+  'VALENTINE2',
+  'VALENTINE3',
+];
+List<String> imgTag = [
+  '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
+  '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
+  '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
 ];
 
 class HomePageWeb extends StatefulWidget {
@@ -22,17 +33,37 @@ class _HomePageWebState extends State<HomePageWeb> {
             child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(5.0)),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                    Image.asset(
+                      item,
+                      fit: BoxFit.cover,
+                    ),
                     Container(
                       padding: const EdgeInsets.symmetric(
                           vertical: 10.0, horizontal: 20.0),
-                      child: Text(
-                        '${imgList.indexOf(item)} VALENTINE',
-                        style: const TextStyle(
+                      child: const Text(
+                        'VALENTINE',
+                        textAlign: TextAlign.justify,
+                        style: TextStyle(
                           color: appBlack,
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.bold,
+                          fontSize: 75.0,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'Barlow-Regular',
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 10.0, horizontal: 20.0),
+                      child: const Text(
+                        'A unique combination of emotional duality that transcends beyond any form of love and relationships',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: appBlack,
+                          fontSize: 28.0,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: 'Barlow-Regular',
                         ),
                       ),
                     ),
@@ -41,14 +72,16 @@ class _HomePageWebState extends State<HomePageWeb> {
           ))
       .toList();
 
-  String home_1 = 'assets/web_home/home_1.png';
+  String home_1 = 'assets/web_home/Screenshot 2022-04-12 at 1.09 1.png';
+
+  final CarouselController _controller = CarouselController();
 
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.of(context).size.width;
     var h = MediaQuery.of(context).size.height;
     return Scaffold(
-      backgroundColor: primaryColor,
+      backgroundColor: Colors.white,
       endDrawer: NavDraw(),
       appBar: AppBar(
         elevation: 0,
@@ -78,8 +111,8 @@ class _HomePageWebState extends State<HomePageWeb> {
                   style: TextStyle(
                     color: red,
                     fontSize: 72,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Swiss 721 Bold BT',
+                    fontWeight: FontWeight.w900,
+                    fontFamily: 'Barlow-Regular',
                   ),
                 ),
               ),
@@ -89,11 +122,13 @@ class _HomePageWebState extends State<HomePageWeb> {
               width: w,
               color: appBlack,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Stack(
                     children: [
-                      Image.asset(logo),
+                      Image.asset(
+                        logo,
+                      ),
                       Positioned(
                         left: 150,
                         top: 50,
@@ -105,28 +140,27 @@ class _HomePageWebState extends State<HomePageWeb> {
                   ),
                   FittedBox(
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: const [
                         Text(
                           'Introducing Dualite',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 60,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: 'Swiss 721 Bold BT',
+                            fontSize: 96,
+                            fontWeight: FontWeight.w900,
+                            fontFamily: 'Barlow-Regular',
                           ),
                         ),
-                        Padding(
-                          padding: EdgeInsets.only(right: 50.0),
-                          child: SizedBox(
-                            width: 1000,
-                            child: Text(
-                              "simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, ",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 32,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'VisiaPro-Regular',
-                              ),
+                        SizedBox(
+                          width: 800,
+                          child: Text(
+                            "A next-generational interactive platform for creators to make the viewing experience more engaging. ",
+                            textAlign: TextAlign.justify,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 40,
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Barlow-Regular',
                             ),
                           ),
                         ),
@@ -144,8 +178,8 @@ class _HomePageWebState extends State<HomePageWeb> {
               style: TextStyle(
                 color: appBlack,
                 fontSize: 72,
-                fontWeight: FontWeight.bold,
-                fontFamily: 'Swiss 721 Bold BT',
+                fontWeight: FontWeight.w900,
+                fontFamily: 'Barlow-Regular',
               ),
             ),
             const SizedBox(
@@ -177,17 +211,30 @@ class _HomePageWebState extends State<HomePageWeb> {
             //   autoPlayInterval: 3000,
             //   isLoop: true,
             // ),
-            Container(
-              // height: 537,
+            SizedBox(
+              height: 750,
               width: w,
               child: CarouselSlider(
-                options: CarouselOptions(
-                  autoPlay: true,
-                  aspectRatio: 0.5,
-                  // enlargeCenterPage: true,
-                ),
+                carouselController: _controller,
+                options: CarouselOptions(viewportFraction: 0.5),
                 items: imageSliders,
               ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 100.0),
+                  child: GestureDetector(
+                    onTap: () => _controller.previousPage(),
+                    child: Image.asset('assets/web_home/back.png'),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () => _controller.nextPage(),
+                  child: Image.asset('assets/web_home/forward.png'),
+                ),
+              ],
             ),
 
             const SizedBox(
@@ -196,30 +243,22 @@ class _HomePageWebState extends State<HomePageWeb> {
 
             ///bottom part
             Container(
-              height: 350,
               width: w,
               color: red,
               padding: const EdgeInsets.only(
-                  top: 80, left: 30, right: 30, bottom: 30),
+                  top: 80, left: 30, right: 30, bottom: 80),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
-                  Text(
-                    "WE'RE CREATORS TOO",
-                    style: TextStyle(
-                      fontFamily: "Swiss 721 Black BT",
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white,
-                      fontSize: 52,
-                    ),
-                  ),
-                  Text(
-                    "We're a bunch of creative people who believe \nin moonshot thinking and our mission is to give \nthe crazy ones a stage to show their creativity.",
-                    style: TextStyle(
-                      fontFamily: "blauth-regular",
-                      fontSize: 20,
-                      color: Colors.white,
-                      fontWeight: FontWeight.w500,
+                  FittedBox(
+                    child: Text(
+                      "WE’RE BUILDING A PLACE TO CREATE \nMINDBLOWING THINGS, OF ENDLESS \nPOSSIBILITIES.",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontFamily: 'Barlow-Regular',
+                        fontSize: 75,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
@@ -241,8 +280,8 @@ class _HomePageWebState extends State<HomePageWeb> {
                           const Text(
                             "Put Things In\nPrespective",
                             style: TextStyle(
-                              fontFamily: "Swiss 721 Black BT",
-                              fontWeight: FontWeight.w400,
+                              fontWeight: FontWeight.w900,
+                              fontFamily: 'Barlow-Regular',
                               color: Colors.white,
                               fontSize: 32,
                             ),
@@ -268,7 +307,10 @@ class _HomePageWebState extends State<HomePageWeb> {
                                     style: TextStyle(color: Colors.white),
                                     decoration: const InputDecoration(
                                       hintText: "Join the waitlist",
-                                      hintStyle: TextStyle(color: Colors.white),
+                                      hintStyle: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Barlow-Regular',
+                                      ),
                                       fillColor: Colors.white,
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(color: appBlack),
@@ -284,7 +326,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                                   child: const Text(
                                     "Ok",
                                     style: TextStyle(
-                                      fontFamily: "blauth-regular",
+                                      fontFamily: 'Barlow-Regular',
                                       color: Colors.white,
                                     ),
                                   ),
@@ -327,7 +369,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                           const Text(
                             'Instagram',
                             style: TextStyle(
-                              fontFamily: "blauth-regular",
+                              fontFamily: 'Barlow-Regular',
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -350,7 +392,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                           const Text(
                             'Twitter',
                             style: TextStyle(
-                              fontFamily: "blauth-regular",
+                              fontFamily: 'Barlow-Regular',
                               fontSize: 20,
                               color: Colors.white,
                             ),
@@ -365,7 +407,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       Text(
                         'Discover',
                         style: TextStyle(
-                          fontFamily: "blauth-regular",
+                          fontFamily: 'Barlow-Regular',
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -376,7 +418,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       Text(
                         'About Us',
                         style: TextStyle(
-                          fontFamily: "blauth-regular",
+                          fontFamily: 'Barlow-Regular',
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -387,7 +429,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       Text(
                         'Competition',
                         style: TextStyle(
-                          fontFamily: "blauth-regular",
+                          fontFamily: 'Barlow-Regular',
                           fontSize: 20,
                           color: Colors.white,
                         ),
@@ -398,7 +440,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       Text(
                         'Ambassadors',
                         style: TextStyle(
-                          fontFamily: "blauth-regular",
+                          fontFamily: 'Barlow-Regular',
                           fontSize: 20,
                           color: Colors.white,
                         ),
