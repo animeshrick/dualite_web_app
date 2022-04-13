@@ -1,8 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../const.dart';
 import '../custom_drawer.dart';
+import 'about_us_web.dart';
+import 'competition_page_web.dart';
+import 'duelite_ambassador_web.dart';
+import 'gallery_web.dart';
 
 List<String> imgList = [
   'assets/web_home/home_3.png',
@@ -49,7 +54,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                           color: appBlack,
                           fontSize: 75.0,
                           fontWeight: FontWeight.w900,
-                          fontFamily: 'Barlow-Regular',
+                          fontFamily: 'Barlow-Black',
                         ),
                       ),
                     ),
@@ -63,7 +68,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                           color: appBlack,
                           fontSize: 28.0,
                           fontWeight: FontWeight.w400,
-                          fontFamily: 'Barlow-Regular',
+                          fontFamily: 'Barlow-Black',
                         ),
                       ),
                     ),
@@ -112,7 +117,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                     color: red,
                     fontSize: 72,
                     fontWeight: FontWeight.w900,
-                    fontFamily: 'Barlow-Regular',
+                    fontFamily: 'Barlow-Black',
                   ),
                 ),
               ),
@@ -148,7 +153,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                             color: Colors.white,
                             fontSize: 96,
                             fontWeight: FontWeight.w900,
-                            fontFamily: 'Barlow-Regular',
+                            fontFamily: 'Barlow-Black',
                           ),
                         ),
                         SizedBox(
@@ -160,7 +165,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                               color: Colors.white,
                               fontSize: 40,
                               fontWeight: FontWeight.w400,
-                              fontFamily: 'Barlow-Regular',
+                              fontFamily: 'Barlow-Black',
                             ),
                           ),
                         ),
@@ -179,7 +184,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                 color: appBlack,
                 fontSize: 72,
                 fontWeight: FontWeight.w900,
-                fontFamily: 'Barlow-Regular',
+                fontFamily: 'Barlow-Black',
               ),
             ),
             const SizedBox(
@@ -255,7 +260,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                       "WE’RE BUILDING A PLACE TO CREATE \nMINDBLOWING THINGS, OF ENDLESS \nPOSSIBILITIES.",
                       style: TextStyle(
                         fontWeight: FontWeight.w900,
-                        fontFamily: 'Barlow-Regular',
+                        fontFamily: 'Barlow-Black',
                         fontSize: 75,
                         color: Colors.white,
                       ),
@@ -281,7 +286,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                             "Put Things In\nPrespective",
                             style: TextStyle(
                               fontWeight: FontWeight.w900,
-                              fontFamily: 'Barlow-Regular',
+                              fontFamily: 'Barlow-Black',
                               color: Colors.white,
                               fontSize: 32,
                             ),
@@ -309,7 +314,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                                       hintText: "Join the waitlist",
                                       hintStyle: TextStyle(
                                         color: Colors.white,
-                                        fontFamily: 'Barlow-Regular',
+                                        fontFamily: 'Barlow-Black',
                                       ),
                                       fillColor: Colors.white,
                                       enabledBorder: UnderlineInputBorder(
@@ -326,7 +331,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                                   child: const Text(
                                     "Ok",
                                     style: TextStyle(
-                                      fontFamily: 'Barlow-Regular',
+                                      fontFamily: 'Barlow-Black',
                                       color: Colors.white,
                                     ),
                                   ),
@@ -356,96 +361,148 @@ class _HomePageWebState extends State<HomePageWeb> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/insta.png',
-                            height: 50,
-                            width: 50,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            'Instagram',
-                            style: TextStyle(
-                              fontFamily: 'Barlow-Regular',
-                              fontSize: 20,
+                      InkWell(
+                        onTap: () async {
+                          await launch(instagramLink);
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/instagram.png',
+                              height: 20,
+                              width: 20,
                               color: Colors.white,
                             ),
-                          ),
-                        ],
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              'Instagram',
+                              style: TextStyle(
+                                fontFamily: 'Barlow-Black',
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         width: 35,
                       ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            'assets/twitter.png',
-                            height: 50,
-                            width: 50,
-                          ),
-                          const SizedBox(
-                            width: 10,
-                          ),
-                          const Text(
-                            'Twitter',
-                            style: TextStyle(
-                              fontFamily: 'Barlow-Regular',
-                              fontSize: 20,
+                      InkWell(
+                        onTap: () async {
+                          await launch(twitterLink);
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset(
+                              'assets/twitter_outline.png',
+                              height: 20,
+                              width: 20,
                               color: Colors.white,
                             ),
-                          ),
-                        ],
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              'Twitter',
+                              style: TextStyle(
+                                fontFamily: 'Barlow-Black',
+                                fontSize: 20,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: const [
-                      Text(
-                        'Discover',
-                        style: TextStyle(
-                          fontFamily: 'Barlow-Regular',
-                          fontSize: 20,
-                          color: Colors.white,
+                    children: [
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => GalleryWeb(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Discover',
+                          style: TextStyle(
+                            fontFamily: 'Barlow-Black',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 35,
                       ),
-                      Text(
-                        'About Us',
-                        style: TextStyle(
-                          fontFamily: 'Barlow-Regular',
-                          fontSize: 20,
-                          color: Colors.white,
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => AboutUsWeb(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'About Us',
+                          style: TextStyle(
+                            fontFamily: 'Barlow-Black',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 35,
                       ),
-                      Text(
-                        'Competition',
-                        style: TextStyle(
-                          fontFamily: 'Barlow-Regular',
-                          fontSize: 20,
-                          color: Colors.white,
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => CompetitionPageWeb(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Competition',
+                          style: TextStyle(
+                            fontFamily: 'Barlow-Black',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 35,
                       ),
-                      Text(
-                        'Ambassadors',
-                        style: TextStyle(
-                          fontFamily: 'Barlow-Regular',
-                          fontSize: 20,
-                          color: Colors.white,
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (_) => DueliteAmbassadorWeb(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Ambassadors',
+                          style: TextStyle(
+                            fontFamily: 'Barlow-Black',
+                            fontSize: 20,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 35,
                       ),
                     ],

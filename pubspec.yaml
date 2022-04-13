@@ -146,8 +146,8 @@ flutter:
       fonts:
         - asset: assets/font/VisiaPro-Regular.ttf
 
-    - family: Barlow-Regular
+    - family: Barlow-Black
       fonts:
-        - asset: assets/font/Barlow-Regular.ttf
+        - asset: assets/font/Barlow-Black.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
