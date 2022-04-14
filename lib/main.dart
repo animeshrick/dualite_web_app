@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'canvas/responsive/mobile_screen_layout.dart';
 import 'home_page.dart';
 
 void main() {
@@ -19,8 +20,8 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
-      // home: HomePage2(),
+      // home: SplashScreen(),
+      home: MobileScreenLayout(),
     );
   }
 }

@@ -7,6 +7,7 @@ import 'about_ us_page.dart';
 import 'dualitr_competition.dart';
 import 'gallaery.dart';
 import 'home_page.dart';
+import 'interestive_video_player/test_video.dart';
 
 class NavDraw extends StatefulWidget {
   @override
@@ -24,6 +25,15 @@ class _NavDrawState extends State<NavDraw> {
         width: screenSize.width,
         child: ListView(
           children: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (_) => PlayVideo()),
+                );
+              },
+              child: Text("s"),
+            ),
             _createDrawerItem(
                 // icon: Icons.timer,
                 text: 'Home',

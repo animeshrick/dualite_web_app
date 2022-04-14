@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+const webScreenSize = 600;
+
 const Color primaryColor = Color(0xffe5e4e1);
 const Color red = Color(0xffEC202B);
 const Color foolterColor = Color(0xff222831);

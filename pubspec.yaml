@@ -47,6 +47,7 @@ dependencies:
   hovering: ^1.0.4
   intl:
   url_launcher: ^6.0.20
+  flutter_svg: ^1.0.3
 
 dev_dependencies:
   flutter_test:
@@ -81,6 +82,8 @@ flutter:
     - assets/web_home/
     - assets/web_gallery/
     - assets/web_about_us/
+    - assets/icons/
+    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -149,5 +152,11 @@ flutter:
     - family: Barlow-Black
       fonts:
         - asset: assets/font/Barlow-Black.ttf
+    - family: TikTokIcons
+      fonts:
+        - asset: assets/font/tiktok/TikTokIcons.ttf
+    - family: Montserrat
+      fonts:
+        - asset: assets/font/montserrat/Montserrat-Bold.otf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
