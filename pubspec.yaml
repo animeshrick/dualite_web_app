@@ -48,6 +48,7 @@ dependencies:
   intl:
   url_launcher: ^6.0.20
   flutter_svg: ^1.0.3
+  get:
 
 dev_dependencies:
   flutter_test:

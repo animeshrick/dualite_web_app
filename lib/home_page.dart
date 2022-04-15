@@ -478,7 +478,7 @@ class _HomePage2State extends State<HomePage2> {
                     height: 30,
                   ),
                   const Text(
-                    'FOR THE CREATORS,',
+                    'PUT THINGS IN',
                     style: TextStyle(
                       color: red,
                       fontSize: 28,
@@ -487,7 +487,7 @@ class _HomePage2State extends State<HomePage2> {
                     ),
                   ),
                   const Text(
-                    'By THE CREATORS,',
+                    'PERSPECTIVE',
                     style: TextStyle(
                       color: red,
                       fontSize: 28,
@@ -514,7 +514,7 @@ class _HomePage2State extends State<HomePage2> {
                                 style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 32,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w900,
                                   fontFamily: 'Barlow-Black',
                                 ),
                               ),
@@ -524,13 +524,13 @@ class _HomePage2State extends State<HomePage2> {
                                 child: SizedBox(
                                   // width: 600,
                                   child: Text(
-                                    "A next-generational interactive platform for creators to make the viewing experience more engaging. ",
+                                    "An upcoming next generation interactive video-focused social networking platform",
                                     maxLines: 3,
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 14,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w400,
                                       fontFamily: 'Barlow-Black',
                                     ),
                                   ),

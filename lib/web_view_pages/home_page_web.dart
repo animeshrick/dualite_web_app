@@ -13,23 +13,10 @@ import 'duelite_ambassador_web.dart';
 import 'gallery_web.dart';
 
 List<String> imgList = [
-  'assets/web_home/home_3.png',
-  'assets/web_home/HOME PAGE-DesktopVersion 4.png',
-  'assets/web_home/HOME PAGE-DesktopVersion 5.png',
-  'assets/web_home/home_3.png',
-  'assets/web_home/HOME PAGE-DesktopVersion 4.png',
-  'assets/web_home/HOME PAGE-DesktopVersion 5.png',
-];
-
-List<String> imgHeader = [
-  'VALENTINE',
-  'VALENTINE2',
-  'VALENTINE3',
-];
-List<String> imgTag = [
-  '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
-  '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
-  '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
+  'assets/web_home/home_thn_1.png',
+  'assets/web_home/home_thn_2.png',
+  'assets/web_home/home_thn_3.png',
+  'assets/web_home/home_thn_4.png',
 ];
 
 class HomePageWeb extends StatefulWidget {
@@ -38,6 +25,27 @@ class HomePageWeb extends StatefulWidget {
 }
 
 class _HomePageWebState extends State<HomePageWeb> {
+  List<String> imgList = [
+    'assets/web_home/home_thn_1.png',
+    'assets/web_home/home_thn_2.png',
+    'assets/web_home/home_thn_3.png',
+    'assets/web_home/home_thn_4.png',
+  ];
+
+  List<String> imgHeader = [
+    'Let the Tamasha Begin',
+    'Love is Love',
+    'Last Man Standing',
+    'Cristiano',
+  ];
+  List<String> imgTag = [
+    '"See through the lens of a double-sided Ranbir and the duality of his life in a beautiful rendition from the movie ""Tamasha""",'
+        '1.A unique combination of emotional duality that transcends beyond any form of love and relationships',
+    'A unique combination of emotional duality that transcends beyond any form of love and relationships',
+    '"Although the battlefield is divided into two sides by the borderline, the trauma, conflicts and exceptional courage of soldiers is universal "',
+    '"A tribute to one of the greatest sportsperson on the planet, and the obsession that it takes to become the greatest there is."',
+  ];
+
   String home_1 = 'assets/web_home/Screenshot 2022-04-12 at 1.09 1.png';
   TextEditingController waitListText = TextEditingController();
   final CarouselController _controller = CarouselController();
@@ -91,65 +99,65 @@ class _HomePageWebState extends State<HomePageWeb> {
     bool center = true;
     final List<Widget> imageSliders = imgList
         .map((item) => Container(
-              // margin: const EdgeInsets.only(left: 30, right: 30),
-              // padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
-              // decoration: BoxDecoration(
-              //   border: center == true
-              //       ? Border.all(
-              //           color: red,
-              //           width: 5,
-              //         )
-              //       : Border.all(
-              //           color: Colors.white,
-              //           width: 0,
-              //         ),
-              //   borderRadius: center == true
-              //       ? const BorderRadius.all(
-              //           Radius.circular(20),
-              //         )
-              //       : const BorderRadius.all(
-              //           Radius.circular(0),
-              //         ),
-              // ),
-              height: 537,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Image.asset(
-                    item,
-                    fit: BoxFit.cover,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 20.0),
-                    child: const Text(
-                      'VALENTINE',
-                      textAlign: TextAlign.justify,
-                      style: TextStyle(
-                        color: appBlack,
-                        fontSize: 75.0,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Barlow-Black',
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 10.0, horizontal: 20.0),
-                    child: const Text(
-                      'A unique combination of emotional duality that transcends beyond any form of love and relationships',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: appBlack,
-                        fontSize: 28.0,
-                        fontWeight: FontWeight.w400,
-                        fontFamily: 'Barlow-Black',
-                      ),
-                    ),
-                  ),
-                ],
+      // margin: const EdgeInsets.only(left: 30, right: 30),
+      // padding: const EdgeInsets.only(top: 30, left: 30, right: 30),
+      // decoration: BoxDecoration(
+      //   border: center == true
+      //       ? Border.all(
+      //           color: red,
+      //           width: 5,
+      //         )
+      //       : Border.all(
+      //           color: Colors.white,
+      //           width: 0,
+      //         ),
+      //   borderRadius: center == true
+      //       ? const BorderRadius.all(
+      //           Radius.circular(20),
+      //         )
+      //       : const BorderRadius.all(
+      //           Radius.circular(0),
+      //         ),
+      // ),
+      height: 537,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Image.asset(
+            item,
+            fit: BoxFit.cover,
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(
+                vertical: 10.0, horizontal: 20.0),
+            child: const Text(
+              'VALENTINE',
+              textAlign: TextAlign.justify,
+              style: TextStyle(
+                color: appBlack,
+                fontSize: 75.0,
+                fontWeight: FontWeight.w900,
+                fontFamily: 'Barlow-Black',
               ),
-            ))
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(
+                vertical: 10.0, horizontal: 20.0),
+            child: const Text(
+              'A unique combination of emotional duality that transcends beyond any form of love and relationships',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: appBlack,
+                fontSize: 28.0,
+                fontWeight: FontWeight.w400,
+                fontFamily: 'Barlow-Black',
+              ),
+            ),
+          ),
+        ],
+      ),
+    ))
         .toList();
 
     return Scaffold(
@@ -177,9 +185,9 @@ class _HomePageWebState extends State<HomePageWeb> {
             ),
             const FittedBox(
               child: Padding(
-                padding: EdgeInsets.all(15.0),
+                padding: EdgeInsets.all(50.0),
                 child: Text(
-                  'FOR THE CREATORS, BY THE CREATORES',
+                  'PUT THINGS IN PERSPECTIVE',
                   style: TextStyle(
                     color: red,
                     fontSize: 72,
@@ -225,14 +233,16 @@ class _HomePageWebState extends State<HomePageWeb> {
                         ),
                         SizedBox(
                           width: 800,
-                          child: Text(
-                            "A next-generational interactive platform for creators to make the viewing experience more engaging. ",
-                            textAlign: TextAlign.justify,
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 40,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Barlow-Black',
+                          child: FittedBox(
+                            child: Text(
+                              "An upcoming next generation interactive video-focused social networking platform",
+                              // textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 40,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: 'Barlow-Black',
+                              ),
                             ),
                           ),
                         ),
@@ -283,17 +293,72 @@ class _HomePageWebState extends State<HomePageWeb> {
             //   autoPlayInterval: 3000,
             //   isLoop: true,
             // ),
+            // SizedBox(
+            //   height: 850,
+            //   width: w,
+            //   child: CarouselSlider(
+            //     carouselController: _controller,
+            //     options: CarouselOptions(
+            //       viewportFraction: 0.5,
+            //       autoPlay: true,
+            //       enlargeCenterPage: center,
+            //       aspectRatio: 1,
+            //     ),
+            //     items: imageSliders,
+            //   ),
+            // ),
+
             SizedBox(
-              height: 750,
               width: w,
-              child: CarouselSlider(
+              height: 950,
+              child: CarouselSlider.builder(
                 carouselController: _controller,
+                itemCount: imgList.length,
+                itemBuilder:
+                    (BuildContext context, int itemIndex, int pageViewIndex) =>
+                        Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      imgList[itemIndex],
+                      fit: BoxFit.cover,
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    FittedBox(
+                      child: Text(
+                        imgHeader[itemIndex].toString(),
+                        textAlign: TextAlign.justify,
+                        style: const TextStyle(
+                          color: appBlack,
+                          fontSize: 75.0,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'Barlow-Black',
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Text(
+                      imgTag[itemIndex].toString(),
+                      textAlign: TextAlign.justify,
+                      style: const TextStyle(
+                        color: appBlack,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.w400,
+                        fontFamily: 'Barlow-Black',
+                      ),
+                    ),
+                  ],
+                ),
                 options: CarouselOptions(
-                    viewportFraction: 0.5,
-                    autoPlay: true,
-                    enlargeCenterPage: center,
-                    aspectRatio: 1),
-                items: imageSliders,
+                  viewportFraction: 0.5,
+                  autoPlay: true,
+                  enlargeCenterPage: center,
+                  aspectRatio: 1,
+                ),
               ),
             ),
 
@@ -379,7 +444,7 @@ class _HomePageWebState extends State<HomePageWeb> {
                                     controller: waitListText,
                                     style: TextStyle(color: Colors.white),
                                     decoration: const InputDecoration(
-                                      hintText: "Join the waitlist",
+                                      hintText: "Connect for more updates",
                                       hintStyle: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'Barlow-Black',
